@@ -1,4 +1,5 @@
 import {H2, LightText, NormalText} from "@/components/Text/Text";
+import {BlurFade} from "@/components/BlurFade/BlurFade";
 
 const education = [
     {
@@ -26,16 +27,19 @@ const education = [
 
 export const Education = () => {
     return (
-        <div
-            className={"mt-16"}
-        >
-            <H2 text={"Education"}/>
-            <div className={"w-full flex flex-col mt-3 content-container"}>
-                {education.map((item, index) => (
-                    <EducationItem key={index} {...item}/>
-                ))}
+
+        <BlurFade delay={0.25} inView>
+            <div
+                className={"mt-16"}
+            >
+                <H2 text={"Education"}/>
+                <div className={"w-full flex flex-col mt-3 content-container"}>
+                    {education.map((item, index) => (
+                        <EducationItem key={index} {...item}/>
+                    ))}
+                </div>
             </div>
-        </div>
+        </BlurFade>
     )
 }
 

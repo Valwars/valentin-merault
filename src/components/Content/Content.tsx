@@ -1,11 +1,11 @@
 import {H2, LightText, NormalText} from "@/components/Text/Text";
-import {Forme} from "@/components/Formes/Forme/Forme";
+import {BlurFade} from "@/components/BlurFade/BlurFade";
 
 const content = [
     {
         img: "/assets/topdev.png",
         title: "Topdev-media",
-        description: "I share my knowledge and my passion for technology on my Youtube channel",
+        description: "I share web development tutorials, coding interviews, cheatsheets...",
         date: "2023-2024",
         followers: "- 13.5K followers",  // Ajout des followers
         link: "https://www.instagram.com/topdev_media/" // Optionnel si tu souhaites ajouter un lien ici
@@ -13,7 +13,7 @@ const content = [
     {
         img: "/assets/vltcode.jpg",
         title: "vlt.code",
-        description: "I write articles about technology and design on my Medium account",
+        description: "I share my life as a student entrepreneur and content creator.",
         date: "2023-2024",
         followers: "- 6k followers",  // Ajout des followers
         link: "https://www.instagram.com/vlt.code/" // Optionnel si tu souhaites ajouter un lien ici
@@ -21,7 +21,7 @@ const content = [
     {
         img: "/assets/vlt_dev.png",
         title: "vlt_dev",
-        description: "I share my daily life and my work on my Instagram account",
+        description: "Former account, I shared html, css, js animations and web tutorials.",
         date: "2022-2023",
         followers: "- 100k followers",  // Ajout des followers
         link: "https://www.instagram.com/vlt_dev/" // Lien cliquable vers Instagram
@@ -31,8 +31,10 @@ const content = [
 
 export const Content = () => {
     return (
+        <BlurFade delay={0.25} inView>
+
         <div className={"mt-32 flex flex-col justify-center items-center relative"}>
-            <Forme size={300} rotation={170} opacity={2} coords={{x: "-200px", y: "-300px"}}/>
+
 
             <NormalText text={'"A desire to share"'} className={"text-center"}/>
             <H2 text={"Content creator"} className={"mt-1 text-center"}/>
@@ -41,9 +43,9 @@ export const Content = () => {
                     <ContentItem key={index} {...item}/>
                 ))}
             </div>
-            <Forme size={100} rotation={100} opacity={0.8} coords={{x: "100%", y: "400px"}} rounded={true}/>
 
-        </div>)
+
+        </div></BlurFade>)
 }
 
 interface ContentItemProps {

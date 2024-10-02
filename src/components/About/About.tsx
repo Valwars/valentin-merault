@@ -1,9 +1,11 @@
 import {H2, LightText} from "@/components/Text/Text";
+import {BlurFade} from "@/components/BlurFade/BlurFade";
 
 export const About = () => {
     return (
-        <>
-            <H2 text={"About"} />
+        <BlurFade delay={0.25} inView>
+
+        <H2 text={"About"} />
             <LightText
                 className={"mt-3"}
                 text={
@@ -19,6 +21,6 @@ export const About = () => {
                     </>
                 }
             />
-        </>
+        </BlurFade>
     );
 };

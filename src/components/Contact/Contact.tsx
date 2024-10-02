@@ -1,7 +1,10 @@
 import {NormalText,H2, LightText} from "@/components/Text/Text";
+import {BlurFade} from "@/components/BlurFade/BlurFade";
 
 export const Contact = () => {
     return (
+        <BlurFade delay={0.25} inView>
+
         <div className={"mt-32 flex flex-col justify-center items-center relative"}>
             <NormalText text={'"An idea for a project ?"'} className={"text-center"}/>
             <H2 text={"Get in touch"} className={"mt-1 text-center"} />
@@ -14,6 +17,6 @@ export const Contact = () => {
                 }
             />
 
-        </div>
+        </div></BlurFade>
     )
 }

@@ -1,5 +1,5 @@
 import { H2, LightText, NormalText } from "@/components/Text/Text";
-import {Forme} from "@/components/Formes/Forme/Forme";
+import {BlurFade} from "@/components/BlurFade/BlurFade";
 
 const projects = [
     {
@@ -70,8 +70,10 @@ const projects = [
 
 export const Projects = () => {
     return (
+        <BlurFade delay={0.25} inView>
+
         <div className={"mt-32 flex flex-col justify-center items-center relative"}>
-            <Forme size={100} rotation={150} opacity={0.63} coords={{x: "60%", y: "140px"}} rounded={true}/>
+
 
             <NormalText text={'"Like and urge to code"'} className={"text-center"}/>
             <H2 text={"Selected Projects"} className={"mt-1 text-center"} />
@@ -88,6 +90,7 @@ export const Projects = () => {
                 ))}
             </div>
         </div>
+        </BlurFade>
     );
 };
 

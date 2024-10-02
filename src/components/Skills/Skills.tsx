@@ -1,4 +1,5 @@
 import {H2} from "@/components/Text/Text";
+import {BlurFade} from "@/components/BlurFade/BlurFade";
 
 
 const skills = [
@@ -22,6 +23,8 @@ const skills = [
 
 export const Skills = () => {
     return (
+        <BlurFade delay={0.25} inView>
+
         <div className={"mt-16"}>
             <H2 text={"Skills"}/>
             <div className={"flex flex-wrap gap-y-3  gap-x-2 mt-3"}>
@@ -30,6 +33,7 @@ export const Skills = () => {
                 ))}
             </div>
         </div>
+        </BlurFade>
     )
 }
 

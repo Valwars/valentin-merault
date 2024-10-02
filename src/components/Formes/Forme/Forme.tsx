@@ -11,15 +11,16 @@ interface FormProps {
         y: string;
     };
     rounded?: boolean;
-    parallax?: boolean;  // Ajoute une prop pour activer/désactiver le parallax
+    parallax?: boolean;  // Prop pour activer/désactiver le parallax
+    parallaxRange?: [number, number];  // Nouvelle prop pour définir la plage de déplacement
 }
 
-export const Forme = ({ size, rotation = 0, opacity = 1, coords, rounded, parallax = false }: FormProps) => {
+export const Forme = ({ size, rotation = 0, opacity = 1, coords, rounded, parallax = false, parallaxRange = [-100, 100] }: FormProps) => {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({ target: ref });
 
-    // Toujours appeler useTransform, mais ajuster la valeur de 'y' selon la prop parallax
-    const y = useTransform(scrollYProgress, [parallax ? 0 : 1, 1], parallax ? [-100, 100] : [0, 0]);
+    // Utilisation de parallaxRange pour la transformation y
+    const y = useTransform(scrollYProgress, [parallax ? 0 : 1, 1], parallax ? parallaxRange : [0, 0]);
 
     return (
         <motion.div

@@ -9,6 +9,7 @@
     @apply dark:border-[--border-color];
   }
 }
+
 :root {
   --background: #FBFBFF;
   --foreground: #000000;
@@ -30,6 +31,27 @@
     --border-color: rgba(255,255,255,0.2);
 
   }
+}
+
+
+.light{
+    --background: #FBFBFF;
+    --foreground: #000000;
+    --purple : #7D7BE2;
+    --light-txt : rgba(0,0,0,0.6);
+    --border-color: hsl(0 0% 89.8%);
+    --card-bg :  hsl(0 0% 96.1%);
+    --secondary-color : hsl(0 0% 9%);
+    --border-color: rgba(0,0,0,0.2);
+}
+
+.dark{
+  --background: #141416;
+  --foreground: #FFFFFF;
+  --light-txt : rgba(255,255,255,0.7);
+  --card-bg :  hsl( 0 0% 14.9%);
+  --secondary-color : hsl(0 0% 98%);
+  --border-color: rgba(255,255,255,0.2);
 }
 
 body {
@@ -56,6 +78,10 @@ span{
 
 a{
   color: var(--purple);
+  transition: 0.2s;
+}
+.nav a{
+  color:var(--foreground)
 }
 
 
@@ -63,6 +89,22 @@ a{
   display: block;
   color: var(--foreground);
   position: relative;
+}
+
+.content-container > a *{
+  transition: 0.2s;
+}
+
+
+.content-container > a:hover .font-medium{
+    color: var(--purple);
+}
+
+.content-container > a:hover .font-light{
+    color: var(--foreground);
+}
+.content-container > a:hover span{
+  border-color: var(--purple);
 }
 
 .content-container > a:not(:last-child)::before{
@@ -84,4 +126,20 @@ a{
 [data-theme='dark'] [data-hide-on-theme='dark'],
 [data-theme='light'] [data-hide-on-theme='light'] {
   display: none;
+}
+
+.nav:hover .item{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.nav .item{
+  transition: 0.3s;
+
+}
+
+.nav .item:hover{
+  transform: scale(1.4);
+  padding-left: 15px;
+  padding-right: 15px;
+
 }

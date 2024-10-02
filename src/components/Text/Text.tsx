@@ -22,7 +22,7 @@ export const LightText = ({text,className} :TitleProps) => {
 }
 
 export const NormalText = ({text,className} :TitleProps) => {
-    return <p className={`font-medium ${className}`}>{text}</p>
+    return <p className={`normal-txt font-medium ${className}`}>{text}</p>
 }
 
 
