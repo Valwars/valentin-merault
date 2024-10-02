@@ -1,5 +1,3 @@
-"use client"
-import { useRef } from "react";
 import { Forme } from "@/components/Formes/Forme/Forme";
 import { About } from "@/components/About/About";
 import { H1, H3 } from "@/components/Text/Text";
@@ -9,25 +7,12 @@ import { Projects } from "@/components/Projects/Projects";
 import { Content } from "@/components/Content/Content";
 import { Contact } from "@/components/Contact/Contact";
 import { Dots } from "@/components/dots/Dots";
-import { ArrowRight } from "lucide-react";
 import { BlurFade } from "@/components/BlurFade/BlurFade";
 import { SmoothScroll } from "@/components/Lenis/SmoothScroll";
 import {Dock} from "@/components/dock/Dock";
+import { ScrollButton} from "@/components/GoTo";
 
-export default function Home() {
-    // Création du ref pour la section About
-    const aboutRef = useRef<HTMLDivElement>(null);
-
-    // Fonction pour scroller vers About avec décalage
-    const scrollToAbout = () => {
-        if (aboutRef.current) {
-            const offset = -100; // Valeur négative pour scroller 100px avant le composant
-            const y = aboutRef.current.getBoundingClientRect().top + window.pageYOffset + offset;
-
-            window.scrollTo({ top: y, behavior: "smooth" });
-        }
-    };
-
+export default function Page() {
 
     return (
         <div className="w-full min-h-screen font-[family-name:var(--font-geist-sans)] pb-40 overflow-x-hidden">
@@ -45,16 +30,14 @@ export default function Home() {
                         <H1 text={<>I’m Valentin<br />MERAULT,</>} />
                         <H3 text={<>FullStack developer, UI/UX Designer and Content creator... I love building things and helping people.</>} />
                         {/* Ajout du gestionnaire d'événements au clic */}
-                        <button onClick={scrollToAbout} className="btn text-[--purple] mt-5 text-lg flex flew-row gap-1 items-center">
-                            Learn more about me <ArrowRight />
-                        </button>
+                        <ScrollButton targetId="about" offset={-100} buttonText="Learn more about me" className="text-[--purple]" />
                     </div>
                 </BlurFade>
 
                 <Forme size={220} rotation={28.32} coords={{ x: "75%", y: "80svh" }} parallax={true} parallaxRange={[200, 0]} />
 
                 {/* Section About avec le ref */}
-                <section ref={aboutRef} className={"w-full mx-auto mt-10"}>
+                <section id={"about"} className={"w-full mx-auto mt-10"}>
                     <About />
                     <Forme size={150} rotation={28.32} opacity={0.29} coords={{ x: "-60px", y: "auto" }} rounded={true} parallax={true} parallaxRange={[300, 0]} />
                     <Education />

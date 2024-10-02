@@ -1,14 +1,25 @@
+"use client";
 import { ThemeToggle } from "@/components/ThemeToggle/ThemeToggle";
 import { Home, Instagram, Mail } from "lucide-react";
 import { LinkedInLogoIcon } from "@radix-ui/react-icons";
+import { useEffect, useState } from "react";
 
 export const Dock = () => {
+    const [isClient, setIsClient] = useState(false);
+
+    // Vérification du montage côté client
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
+
     // Fonction pour scroller en haut de la page
     const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
+        if (isClient) {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+        }
     };
 
     return (
