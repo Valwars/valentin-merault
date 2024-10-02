@@ -10,7 +10,7 @@ export const About = () => {
                 className={"mt-3"}
                 text={
                     <>
-                        I am a 22-year-old <span>Master's student</span> specializing in Human-Machine Interaction (HMI) in Toulouse, France.
+                        I am a 22-year-old <span>Master&#39;s student</span> specializing in Human-Machine Interaction (HMI) in Toulouse, France.
                         With substantial experience as a <span>freelance developer</span> and within teams during various <span>internships and personal projects</span>,
                         I am deeply passionate about creating intuitive and innovative digital solutions.
                         <br /><br />
