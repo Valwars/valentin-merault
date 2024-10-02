@@ -17,6 +17,7 @@ export default function Home() {
           <Forme size={200} rotation={28.32} opacity={0.6} coords={{x: "-50px", y: "-50px"}} rounded={true}/>
 
           <main className="w-full flex flex-col gap-50 align-middle justify-center  m-auto max-w-2xl">
+
               <div className={"flex flex-col gap-1 h-svh justify-center  m-auto"}>
                   <H1 text={<>I’m Valentin<br/>MERAULT,</>}/>
                   <H3 text={<>FullStack developer, UI/UX Designer and Content creator...

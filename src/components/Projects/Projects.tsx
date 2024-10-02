@@ -130,7 +130,7 @@ const ProjectItem = ({ project }) => {
             <div className="flex items-center pt-2 px-2 pb-2">
                 <div className="flex flex-row flex-wrap items-start gap-1">
                     <a target="_blank" href={project.website}>
-                        <div className="items-center rounded-md border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-[--background] text-primary-foreground shadow hover:bg-primary/80 flex gap-2 px-2 py-1 text-[10px]  border border-[--foreground]">
+                        <div className="items-center rounded-md  font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-[--background] text-primary-foreground  hover:bg-primary/80 flex gap-2 px-2 py-1 text-[10px]  border border-[--foreground]">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="24"

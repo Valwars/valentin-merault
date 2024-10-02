@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  *,
+  ::before,
+  ::after {
+    @apply dark:border-[--border-color];
+  }
+}
 :root {
   --background: #FBFBFF;
   --foreground: #000000;
@@ -52,11 +59,13 @@ a{
 }
 
 
-.content-container > div {
+.content-container > a {
+  display: block;
+  color: var(--foreground);
   position: relative;
 }
 
-.content-container > div:not(:last-child)::before{
+.content-container > a:not(:last-child)::before{
   border-left: 2px  solid var(--foreground);
 
   opacity: 0.5;

@@ -9,7 +9,7 @@ export const Contact = () => {
                 className={"text-center text-[--light-txt] mt-3 text-xl"}
                 text={
                     <>
-                        Want to chat? Just shoot me a dm <a href={""} className={"underline"}>with a direct question on linkedin</a> and I'll respond whenever I can. I will ignore all soliciting.
+                        Want to chat? Just shoot me a dm <a href={"https://www.linkedin.com/in/valentin-merault-2a420b245"} target={"_blank"} className={"underline"}>with a direct question on linkedin</a> and I'll respond whenever I can. I will ignore all soliciting.
                     </>
                 }
             />

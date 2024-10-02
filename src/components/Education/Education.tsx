@@ -5,19 +5,22 @@ const education = [
         img: "/assets/enac.webp",
         place: "ENAC - National Civil Aviation School, Toulouse France",
         date: "2024-2025",
-        description: "Final year of a Masters in HMI (Human-Computer Interaction)"
+        description: "Final year of a Masters in HMI (Human-Computer Interaction)",
+        link:"https://www.enac.fr/"
     },
     {
         img: "/assets/paulsab.webp",
         place: "University of Paul Sabatier, Toulouse France",
         date: "2023-2024",
-        description: "First year of a Master's degree in HMI (Human-Computer Interaction)"
+        description: "First year of a Master's degree in HMI (Human-Computer Interaction)",
+        link:"https://masterihm.fr//"
     },
     {
         img: "/assets/champ.webp",
         place: "University of Champollion, Albi France",
         date: "2020-2023",
-        description: "Bachelor's degree in Computer Science"
+        description: "Bachelor's degree in Computer Science",
+        link:"https://www.univ-jfc.fr/"
     },
 ]
 
@@ -41,11 +44,15 @@ interface EducationItemProps {
     place: string;
     date: string;
     description: string;
+    link: string;
 }
 
-const EducationItem = ({img, place, date, description}:EducationItemProps) => {
+const EducationItem = ({img, place, date, description, link}:EducationItemProps) => {
 
     return (
+        <a href={link}>
+
+
         <div className={"flex flex-row justify-between w-full py-2 gap-2 pb-8"}>
             <div className={"flex flex-row gap-3"}>
                 <div className={"flex-none"}>
@@ -62,6 +69,6 @@ const EducationItem = ({img, place, date, description}:EducationItemProps) => {
                 </div>
             </div>
             <p className={"text-xs w-max"}>{date}</p>
-        </div>
+        </div>  </a>
     )
 }

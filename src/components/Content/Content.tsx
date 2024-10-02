@@ -8,7 +8,7 @@ const content = [
         description: "I share my knowledge and my passion for technology on my Youtube channel",
         date: "2023-2024",
         followers: "- 13.5K followers",  // Ajout des followers
-        link: "" // Optionnel si tu souhaites ajouter un lien ici
+        link: "https://www.instagram.com/topdev_media/" // Optionnel si tu souhaites ajouter un lien ici
     },
     {
         img: "/assets/vltcode.jpg",
@@ -16,7 +16,7 @@ const content = [
         description: "I write articles about technology and design on my Medium account",
         date: "2023-2024",
         followers: "- 6k followers",  // Ajout des followers
-        link: "" // Optionnel si tu souhaites ajouter un lien ici
+        link: "https://www.instagram.com/vlt.code/" // Optionnel si tu souhaites ajouter un lien ici
     },
     {
         img: "/assets/vlt_dev.png",
@@ -24,14 +24,14 @@ const content = [
         description: "I share my daily life and my work on my Instagram account",
         date: "2022-2023",
         followers: "- 100k followers",  // Ajout des followers
-        link: "https://instagram.com/vlt_dev" // Lien cliquable vers Instagram
+        link: "https://www.instagram.com/vlt_dev/" // Lien cliquable vers Instagram
     },
 
 ]
 
 export const Content = () => {
     return (
-        <div className={"mt-32 flex flex-col justify-center items-center "}>
+        <div className={"mt-32 flex flex-col justify-center items-center relative"}>
             <Forme size={300} rotation={170} opacity={2} coords={{x: "-200px", y: "-300px"}}/>
 
             <NormalText text={'"A desire to share"'} className={"text-center"}/>
@@ -41,7 +41,7 @@ export const Content = () => {
                     <ContentItem key={index} {...item}/>
                 ))}
             </div>
-            <Forme size={100} rotation={100} opacity={0.8} coords={{x: "120%", y: "400px"}} rounded={true}/>
+            <Forme size={100} rotation={100} opacity={0.8} coords={{x: "100%", y: "400px"}} rounded={true}/>
 
         </div>)
 }
@@ -57,28 +57,32 @@ interface ContentItemProps {
 
 const ContentItem = ({img, title, description, date, followers, link}: ContentItemProps) => {
     return (
-        <div className={"flex flex-row justify-between w-full py-2 gap-2 content-item relative pb-8  "}>
-            <div className={"flex flex-row gap-3"}>
-                <div className={"flex-none"}>
+        <a href={link}>
+
+            <div className={"flex flex-row justify-between  w-full py-2 gap-2 content-item relative pb-8  "}>
+                <div className={"flex flex-row gap-3"}>
+                    <div className={"flex-none"}>
                     <span
                         className={"relative flex shrink-0 overflow-hidden rounded-full border-solid border-2 border-[--border-color] size-12 m-auto bg-muted-background dark:bg-foreground"}>
                         <img src={img} alt={title}
                              className={"aspect-square h-full w-full object-cover"}/>
                     </span>
-                </div>
-
-                <div>
-                    <div className={"flex flex-row items-center gap-1"}>
-
-                    <NormalText text={title} className={"font-semibold"}/>
-
-                    <LightText text={followers} className={"mt-1"}/>  {/* Affichage du nombre de followers */}
                     </div>
-                    <LightText text={description} className={"text-xs"}/>
 
+                    <div>
+                        <div className={"flex flex-row items-center gap-1"}>
+
+                            <NormalText text={title} className={"font-semibold"}/>
+
+                            <LightText text={followers} className={"mt-1"}/> {/* Affichage du nombre de followers */}
+                        </div>
+                        <LightText text={description} className={"text-xs"}/>
+
+                    </div>
                 </div>
+                <p className={"text-xs w-max"}>{date}</p>
             </div>
-            <p className={"text-xs w-max"}>{date}</p>
-        </div>
+
+        </a>
     )
 }
