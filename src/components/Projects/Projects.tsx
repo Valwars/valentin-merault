@@ -93,8 +93,18 @@ export const Projects = () => {
         </BlurFade>
     );
 };
+interface ProjectItemProps {
+    project: {
+        video: string;
+        title: string;
+        date: string;
+        description: string;
+        tags: string[];
+        website: string;
+    };
+}
 
-const ProjectItem = ({ project }) => {
+const ProjectItem = ({ project }: ProjectItemProps) => {
     return (
         <div className="rounded-lg bg-card bg-[--background] flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full ">
             <a className="block cursor-pointer" href={project.website}>
