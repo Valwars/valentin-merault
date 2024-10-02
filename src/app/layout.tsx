@@ -25,7 +25,12 @@ export default function RootLayout({
       <body
         className={`${poppins.className} antialiased max-w-full overflow-x-hidden px-6`}
       >
-      <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+      <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={true}
+          enableColorScheme={true}
+          disableTransitionOnChange>
         {children}
       </ThemeProvider>
       </body>

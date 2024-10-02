@@ -50,3 +50,29 @@ span{
 a{
   color: var(--purple);
 }
+
+
+.content-container > div {
+  position: relative;
+}
+
+.content-container > div:not(:last-child)::before{
+  border-left: 2px  solid var(--foreground);
+
+  opacity: 0.5;
+  display: block;
+  position: absolute;
+  height: 60px;
+  bottom : -20px;
+  left: 22.5px;
+  content: "";
+  z-index: -1;
+  margin: auto;
+
+}
+
+
+[data-theme='dark'] [data-hide-on-theme='dark'],
+[data-theme='light'] [data-hide-on-theme='light'] {
+  display: none;
+}

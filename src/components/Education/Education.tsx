@@ -27,7 +27,7 @@ export const Education = () => {
             className={"mt-16"}
         >
             <H2 text={"Education"}/>
-            <div className={"w-full flex flex-col gap-3 mt-3"}>
+            <div className={"w-full flex flex-col mt-3 content-container"}>
                 {education.map((item, index) => (
                     <EducationItem key={index} {...item}/>
                 ))}
@@ -46,7 +46,7 @@ interface EducationItemProps {
 const EducationItem = ({img, place, date, description}:EducationItemProps) => {
 
     return (
-        <div className={"flex flex-row justify-between w-full py-2 gap-2 "}>
+        <div className={"flex flex-row justify-between w-full py-2 gap-2 pb-8"}>
             <div className={"flex flex-row gap-3"}>
                 <div className={"flex-none"}>
                       <span

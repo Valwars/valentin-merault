@@ -31,12 +31,12 @@ const content = [
 
 export const Content = () => {
     return (
-        <div className={"mt-32 flex flex-col justify-center items-center relative"}>
+        <div className={"mt-32 flex flex-col justify-center items-center "}>
             <Forme size={300} rotation={170} opacity={2} coords={{x: "-200px", y: "-300px"}}/>
 
             <NormalText text={'"A desire to share"'} className={"text-center"}/>
             <H2 text={"Content creator"} className={"mt-1 text-center"}/>
-            <div className={"w-full flex flex-col gap-3 mt-8"}>
+            <div className={"w-full flex flex-col mt-8 content-container"}>
                 {content.map((item, index) => (
                     <ContentItem key={index} {...item}/>
                 ))}
@@ -57,7 +57,7 @@ interface ContentItemProps {
 
 const ContentItem = ({img, title, description, date, followers, link}: ContentItemProps) => {
     return (
-        <div className={"flex flex-row justify-between w-full py-2 gap-2 content-item "}>
+        <div className={"flex flex-row justify-between w-full py-2 gap-2 content-item relative pb-8  "}>
             <div className={"flex flex-row gap-3"}>
                 <div className={"flex-none"}>
                     <span
