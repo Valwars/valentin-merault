@@ -15,7 +15,7 @@ import { ScrollButton} from "@/components/GoTo";
 export default function Page() {
 
     return (
-        <div className="w-full min-h-screen font-[family-name:var(--font-geist-sans)] pb-40 overflow-x-hidden">
+        <div className="w-full min-h-screen font-[family-name:var(--font-geist-sans)] pb-40 relative overflow-x-hidden px-6">
             <Dots />
 
             <SmoothScroll />

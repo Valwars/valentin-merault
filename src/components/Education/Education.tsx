@@ -57,7 +57,7 @@ const EducationItem = ({img, place, date, description, link}:EducationItemProps)
         <a href={link}>
 
 
-        <div className={"flex flex-row justify-between w-full py-2 gap-2 pb-8"}>
+        <div className={"flex flex-row justify-between w-full py-2 gap-2 pb-8 flex-wrap"}>
             <div className={"flex flex-row gap-3"}>
                 <div className={"flex-none"}>
                       <span
@@ -72,7 +72,7 @@ const EducationItem = ({img, place, date, description, link}:EducationItemProps)
                     <LightText text={description} className={"text-xs"}/>
                 </div>
             </div>
-            <p className={"text-xs w-max"}>{date}</p>
+            <p className={"text-xs w-max ml-auto"}>{date}</p>
         </div>  </a>
     )
 }

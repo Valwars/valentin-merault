@@ -61,7 +61,7 @@ const ContentItem = ({img, title, description, date, followers, link}: ContentIt
     return (
         <a href={link}>
 
-            <div className={"flex flex-row justify-between  w-full py-2 gap-2 content-item relative pb-8  "}>
+            <div className={"flex flex-row justify-between  w-full py-2 gap-2 content-item relative pb-8 flex-wrap"}>
                 <div className={"flex flex-row gap-3"}>
                     <div className={"flex-none"}>
                     <span
@@ -73,16 +73,14 @@ const ContentItem = ({img, title, description, date, followers, link}: ContentIt
 
                     <div>
                         <div className={"flex flex-row items-center gap-1"}>
-
                             <NormalText text={title} className={"font-semibold"}/>
-
                             <LightText text={followers} className={"mt-1"}/> {/* Affichage du nombre de followers */}
                         </div>
                         <LightText text={description} className={"text-xs"}/>
 
                     </div>
                 </div>
-                <p className={"text-xs w-max"}>{date}</p>
+                <p className={"text-xs w-max ml-auto"}>{date}</p>
             </div>
 
         </a>
