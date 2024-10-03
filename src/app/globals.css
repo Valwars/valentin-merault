@@ -19,6 +19,7 @@
   --card-bg :  hsl(0 0% 96.1%);
   --secondary-color : hsl(0 0% 9%);
   --border-color: rgba(0,0,0,0.2);
+  --dock-border : rgba(0,0,0,0.2);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,7 +30,7 @@
     --card-bg :  hsl( 0 0% 14.9%);
     --secondary-color : hsl(0 0% 98%);
     --border-color: rgba(255,255,255,0.2);
-
+    --dock-border : rgba(255,255,255,0.1);
   }
 }
 
@@ -43,6 +44,9 @@
     --card-bg :  hsl(0 0% 96.1%);
     --secondary-color : hsl(0 0% 9%);
     --border-color: rgba(0,0,0,0.2);
+  --dock-border : rgba(0,0,0,0.2);
+
+
 }
 
 .dark{
@@ -52,6 +56,8 @@
   --card-bg :  hsl( 0 0% 14.9%);
   --secondary-color : hsl(0 0% 98%);
   --border-color: rgba(255,255,255,0.2);
+  --dock-border : rgba(255,255,255,0.1);
+
 }
 
 body {
@@ -143,4 +149,13 @@ a{
   padding-left: 15px;
   padding-right: 15px;
 
+}
+
+@media (max-width: 450px) {
+ h1{
+   font-size: 4rem !important;
+ }
+  h3{
+    font-size: 1.3rem !important;
+  }
 }

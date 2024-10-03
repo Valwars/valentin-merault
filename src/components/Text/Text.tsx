@@ -7,7 +7,7 @@ interface TitleProps {
 }
 
 export const H1 = ({text} :TitleProps) => {
-    return <h2 className={"text-7xl font-bold"}>{text}</h2>
+    return <h1 className={"text-7xl font-bold"}>{text}</h1>
 }
 
 export const H2 = ({text, className} :TitleProps) => {

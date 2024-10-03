@@ -38,7 +38,7 @@ export const Dock = () => {
             </div>
 
             {/* Icônes des réseaux sociaux avec liens */}
-            <div className={"flex flex-row gap-2 border-x-2 px-2"}>
+            <div className={"flex flex-row gap-2 border-x-2 px-2 border-[--dock-border]"}>
                 {/* Ouvrir une fenêtre de mail */}
                 <a href="mailto:valentin.merault@gmail.com" className="p-2 item">
                     <Mail size={20}/>
