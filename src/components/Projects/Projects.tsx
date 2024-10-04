@@ -19,6 +19,7 @@ const projects = [
 
         ],
         website: "https://topdev-media.com",
+        type : "Website"
     },
     {
         video: "/assets/hopteo.mp4",
@@ -35,6 +36,7 @@ const projects = [
             "Vercel",
         ],
         website: "https://hopteomanager.hopteo.com/",
+    type : "Website"
     },
     {
         video: "/assets/ebook.mp4",
@@ -51,6 +53,7 @@ const projects = [
             "Vercel",
         ],
         website: "https://www.franck-rcrd.com/",
+        type : "Website"
     },
     {
         video: "/assets/productisma.mp4",
@@ -64,6 +67,7 @@ const projects = [
             "Adobe",
         ],
         website: "https://www.figma.com/design/fA6F6sKv3h3EmaA2gRmgQh/ValentinMeraultTP?node-id=0-1&t=bMyyQiFPPor2SEo1-1",
+        type : "Figma Prototype"
     },
     // Add more project objects here
 ];
@@ -101,6 +105,7 @@ interface ProjectItemProps {
         description: string;
         tags: string[];
         website: string;
+        type:string;
     };
 }
 
@@ -160,7 +165,7 @@ const ProjectItem = ({ project }: ProjectItemProps) => {
                                 <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
                                 <path d="M2 12h20"></path>
                             </svg>
-                            Website
+                            {project.type}
                         </div>
                     </a>
                 </div>
