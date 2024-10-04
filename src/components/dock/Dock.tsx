@@ -46,7 +46,7 @@ export const Dock = () => {
 
                 {/* Lien vers LinkedIn */}
                 <a
-                    href="www.linkedin.com/in/valentin-merault-2a420b245"
+                    href="https://www.linkedin.com/in/valentin-merault-2a420b245"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 item"
