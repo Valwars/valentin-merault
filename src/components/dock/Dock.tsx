@@ -33,9 +33,12 @@ export const Dock = () => {
             }}
         >
             {/* Bouton Home pour renvoyer en haut de la page */}
-            <div className={"p-2 item"} onClick={scrollToTop} >
-                <Home size={20} />
-            </div>
+            <button
+                aria-label="Go to Home"
+                onClick={() => scrollToTop()} // Utilisation de resolvedTheme
+                className="p-2 rounded-full transition-all item"
+            >                <Home size={20} />
+            </button>
 
             {/* Icônes des réseaux sociaux avec liens */}
             <div className={"flex flex-row gap-2 border-x-2 px-2 border-[--dock-border]"}>
