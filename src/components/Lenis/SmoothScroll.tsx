@@ -1,8 +1,9 @@
 "use client";
-import { useEffect, useState } from "react";
+import {ReactNode, useEffect, useState} from "react";
 import Lenis from "lenis";
+import ReactLenis from "lenis/react";
 
-export const SmoothScroll = () => {
+export const SmoothScroll = ({children}: {children: ReactNode}) => {
     const [isClient, setIsClient] = useState(false);
 
     useEffect(() => {
@@ -35,5 +36,5 @@ export const SmoothScroll = () => {
         }
     }, [isClient]);
 
-    return <></>;
+    return <ReactLenis root>{children} </ReactLenis>;
 };

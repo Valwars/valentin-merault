@@ -2,23 +2,17 @@
 import { ThemeToggle } from "@/components/ThemeToggle/ThemeToggle";
 import { Home, Instagram, Mail } from "lucide-react";
 import { LinkedInLogoIcon } from "@radix-ui/react-icons";
-import { useEffect, useState } from "react";
+import {useLenis} from "lenis/react";
+
 
 export const Dock = () => {
-    const [isClient, setIsClient] = useState(false);
+    const lenis = useLenis();
 
-    // Vérification du montage côté client
-    useEffect(() => {
-        setIsClient(true);
-    }, []);
-
-    // Fonction pour scroller en haut de la page
+    // Fonction pour scroller en haut de la page avec Lenis
     const scrollToTop = () => {
-        if (isClient) {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-            });
+        if (lenis) {
+            console.log("Using Lenis for smooth scroll");
+            lenis.scrollTo(0); // Le paramètre "immediate" permet de contrôler si le scroll est instantané
         }
     };
 
@@ -35,19 +29,17 @@ export const Dock = () => {
             {/* Bouton Home pour renvoyer en haut de la page */}
             <button
                 aria-label="Go to Home"
-                onClick={() => scrollToTop()} // Utilisation de resolvedTheme
+                onClick={scrollToTop}
                 className="p-2 rounded-full transition-all item"
-            >                <Home size={20} />
+            >
+                <Home size={20} />
             </button>
 
             {/* Icônes des réseaux sociaux avec liens */}
             <div className={"flex flex-row gap-2 border-x-2 px-2 border-[--dock-border]"}>
-                {/* Ouvrir une fenêtre de mail */}
                 <a href="mailto:valentin.merault@gmail.com" className="p-2 item">
-                    <Mail size={20}/>
+                    <Mail size={20} />
                 </a>
-
-                {/* Lien vers LinkedIn */}
                 <a
                     href="https://www.linkedin.com/in/valentin-merault-2a420b245"
                     target="_blank"
@@ -56,8 +48,6 @@ export const Dock = () => {
                 >
                     <LinkedInLogoIcon style={{ width: 20, height: 20 }} />
                 </a>
-
-                {/* Lien vers Instagram */}
                 <a
                     href="https://www.instagram.com/topdev_media"
                     target="_blank"

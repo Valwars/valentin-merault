@@ -18,7 +18,7 @@ export default function Page() {
         <div className="w-full min-h-screen font-[family-name:var(--font-geist-sans)] pb-40 relative overflow-x-hidden px-6">
             <Dots />
 
-            <SmoothScroll />
+            <SmoothScroll>
             <Forme size={200} rotation={28.32} opacity={0.6} coords={{ x: "-50px", y: "-50px" }} rounded={true} />
 
             <main className="w-full flex flex-col gap-50 align-middle justify-center m-auto max-w-2xl">
@@ -61,6 +61,7 @@ export default function Page() {
             className={"fixed bottom-0 inset-x-0 h-16 w-full bg-background to-transparent backdrop-blur-lg [-webkit-mask-image:linear-gradient(to_top,black,transparent)] dark:bg-background"}>
 
             </div>
+                </SmoothScroll>
         </div>
     );
 }
